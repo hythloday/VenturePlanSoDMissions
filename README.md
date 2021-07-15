@@ -4,7 +4,11 @@ VenturePlan does not expose any of its data to other addons, so to have this add
 
 # Getting it running
 
-To expose VenturePlan's internal data you will need to edit its source code. Open up Interface/Addons/VenturePlan/vs.lua in a text editor, and insert the line `_G[_] = T` in the first blank space. This makes the internal data of the addon (`T`) available to other addons (by putting it in the global table, `_G`, which every addon has available to it). In general you shouldn't be messing with addons like this, because it's a great way of getting hacked, but in this case there's no way around it. _caveat emptor_
+To expose VenturePlan's internal data you will need to edit its source code. Open up Interface/Addons/VenturePlan/vs.lua in a text editor, and insert the line `_G[_] = T` in the first blank space. It should look like this when you're done:
+
+![Notepad preview of changed file](img/notepad.png)
+
+This makes the internal data of the addon (`T`) available to other addons (by putting it in the global table, `_G`, which every addon has available to it). In general you shouldn't be messing with addons like this, because it's a great way of getting hacked, but in this case there's no way around it. _caveat emptor_
 
 # Contributing
 
