@@ -1,0 +1,62 @@
+name: Package World of Warcraft addon
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Addon version'
+        required: true
+
+env:
+  CLASSIC_VERSION: 11307
+  BURNING_CRUSADE_VERSION: 20501
+
+jobs:
+  package:
+    name: Create zips and tag
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Get name of addon
+      id: init
+      run: |
+        addon_name=$(ls *.toc)
+        addon_name=$(basename $addon_name .toc)
+        tag_name=${addon_name}-${{github.event.inputs.version}}
+        echo "::set-output name=addon_name::${addon_name}"
+        echo "::set-output name=tag_name::${tag_name}"
+
+    - name: Make folder for zips
+      run: |
+        mkdir -p .releases/${{steps.init.outputs.addon_name}}
+        rsync -r --exclude '.*' . .releases/${{steps.init.outputs.addon_name}}
+
+    - name: Create retail zip
+      run: |
+        cd .releases
+        zip -9 -r ${{steps.init.outputs.tag_name}}.zip ${{steps.init.outputs.addon_name}}
+        cd ..
+
+    - name: Tag this version
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{steps.init.outputs.tag_name}}
+        release_name: ${{steps.init.outputs.addon_name}} ${{github.event.inputs.version}}
+        body: ${{steps.init.outputs.addon_name}} ${{github.event.inputs.version}}
+        draft: false
+        prerelease: false
+
+    - name: Add retail zip to release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: .releases/${{steps.init.outputs.tag_name}}.zip
+        asset_name: ${{steps.init.outputs.tag_name}}.zip
+        asset_content_type: application/zip
