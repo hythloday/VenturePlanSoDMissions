@@ -1,0 +1,9 @@
+## Interface: 90010
+## Title: Extra Missions for Venture Plan
+## Version: 4.16a
+## Notes: Adds 9.1 table missions to Venture Plan.
+## Author: hythloday
+## License: GPLv3
+## X-Website: https://github.com/hythloday/extra-missions-venture-plan
+
+extra-vs-spells.lua
