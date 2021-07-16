@@ -69,7 +69,7 @@ T.MoreSpells = {
     [345]={type="aura", target="all-allies" , duration=3 , modDamageTaken=-30},
     [346]={type="aura", target=0, duration=2, damageATK1=30, modDamageDealt=-1},
     [347]={type="nuke", target="cone", damageATK=100}, --Darkness from Above
-	[348]={
+    [348]={
 		{type="nuke", target=1, damageATK=120},
 		{type="aura", target=1, duration=3, plusDamageTakenATK=20},
 	}, --Tainted Bite
