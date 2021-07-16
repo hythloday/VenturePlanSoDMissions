@@ -61,11 +61,11 @@ T.MoreSpells = {
 		{type="nuke", target=0, damageATK=100},
 		{type="aura", target=0, duration=2, plusDamageDealtATK=-70},
 	}, --Regurgitated Meal
-	[343]={
+    [343]={
 		{type="nuke", target="enemy-front", damageATK=80},
 		{type="aura", target=4, duration=1, modDamageDealt=20},
 	}, --Sharptooth Snarl
-	[344]={type="nuke", target="all-enemies", damageATK=30}, --Razorwing Buffet
+    [344]={type="nuke", target="all-enemies", damageATK=30}, --Razorwing Buffet
     [345]={type="aura", target="all-allies" , duration=3 , modDamageTaken=-30},
     [346]={type="aura", target=0, duration=2, damageATK1=30, modDamageDealt=-1},
     [347]={type="nuke", target="cone", damageATK=100}, --Darkness from Above
