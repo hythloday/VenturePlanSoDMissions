@@ -68,7 +68,7 @@ jobs:
       with:
         url: 'https://wow.curseforge.com/api/projects/${{ env.CURSEFORGE_PROJECT_ID }}/upload-file'
         method: 'POST'
-        data: '{ "metadata": { "changelog": "0.05", "displayName": "VenturePlanSoDMissions-0.05.zip", "gameVersions": [8290], "releaseType": "release" }}'
+        data: '{ "metadata": "{ \"changelog\": \"${{github.event.inputs.version}}\", \"displayName\": \"${{ steps.init.outputs.tag_name }}.zip\", \"gameVersions\": [8290], \"releaseType\": \"release\" }"}'
         files: '{ "file": ".releases/${{ steps.init.outputs.tag_name }}.zip" }'
         customHeaders: '{ "X-Api-Token": "${{ secrets.CURSEFORGE_API_TOKEN }}" }'
     - name: Show Response
