@@ -83,6 +83,6 @@ jobs:
         curl -s https://api.wowinterface.com/addons/update \
           -H "x-api-token: ${{ secrets.WOWINTERFACE_API_TOKEN }}" \
           -F id=${{ env.WOWINTERFACE_PROJECT_ID }} \
-          -F version=${{github.event.inputs.version}}
-          -F updatefile=@.releases/${{ steps.init.outputs.tag_name }}.zip
+          -F version=${{github.event.inputs.version}} \
+          -F updatefile=@.releases/${{ steps.init.outputs.tag_name }}.zip \
           -F changelog=@.releases/${{ steps.changelog.outputs.changelog_name }}
