@@ -74,4 +74,4 @@ jobs:
 
     - name: Show Response
       run: echo ${{ steps.curseforgeUpload.outputs.response }}
-      if: succeeded() || failed()
+      if: success() || failure()
