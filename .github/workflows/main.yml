@@ -44,8 +44,8 @@ jobs:
     - name: Create changelog
       id: changelog
       run: |
-        changelog_name=.releases/changelog-${{github.event.inputs.version}}.txt
-        git log $(git describe --tags --abbrev=0)..HEAD --oneline --pretty=%s > $changelog_name
+        changelog_name=changelog-${{github.event.inputs.version}}.txt
+        git log $(git describe --tags --abbrev=0)..HEAD --oneline --pretty=%s > .releases/$changelog_name
         echo "::set-output name=changelog_name::${changelog_name}"
 
     - name: Tag this version
