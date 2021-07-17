@@ -13,3 +13,13 @@ This makes the internal data of the addon (`T`) available to other addons (by pu
 # Contributing
 
 If you have updates to the spell list you'd like to include (see `extra-vs-spells.lua`), please open a PR and I'll add them.
+
+## Contributors and thanks
+
+Many thanks to:
+
+* Neurotoxin001
+* pyuuwz
+* czullo
+
+for contributions and support, as well as to the original author for a great addon.
