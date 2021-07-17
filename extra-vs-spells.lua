@@ -39,23 +39,23 @@ function to_string( tbl )
 end
 
 T.MoreSpells = {
-    [305]={type="nuke", target="enemy-back" ,damageATK=120},
-    [315]={type="aura", target=1, damageATK1=150, duration=2, modDamageDealt=-30},
+    [305]={type="nuke", target="enemy-back", damageATK=120}, --Roots of Submission
+    [315]={type="aura", target=1, damageATK1=150, duration=2, modDamageDealt=-30}, --Resounding Message
     [325]={type="aura", target="friend-surround", duration=2, modDamageDealt=60}, --Vision of Beauty
-    [326]={type="nuke", target="cleave", damageATK=25},
-    [327]={type="aura", target="all-other-allies", duration=3, plusDamageDealtATK=20},
-    [328]={type="nuke", target=0, damageATK=30},
-    [329]={type="aura", target=4, modDamageTaken=-50, duration=3},
-    [330]={type="aura", target=4, duration=2, plusDamageDealtATK=25},
-    [331]={type="aura", target="all-allies", plusDamageDealtATK=23, duration=3},
+    [326]={type="nuke", target="cleave", damageATK=25}, --Shiftless Smash
+    [327]={type="aura", target="all-other-allies", duration=3, plusDamageDealtATK=20}, --Inspirational Teachings
+    [328]={type="nuke", target=0, damageATK=30}, --Applied Lesson
+    [329]={type="aura", target=4, modDamageTaken=-50, duration=3}, --Muscle Up
+    [330]={type="aura", target=4, duration=2, plusDamageDealtATK=25}, --Oversight
+    [331]={type="aura", target="all-allies", plusDamageDealtATK=23, duration=3}, --Supporting Fire (I'm not sure it needs duration 3)
     [332]={type="nuke", target=1, damageATK=150}, --Emptied Mug
-    [333]={type="aura", target=4, duration=3, modDamageDealt=40},
-    [334]={type="nuke", target=0, damageATK=90},
-    [335]={type="nuke", target="enemy-back", damageATK=40},
-    [336]={type="heal", target=3, healATK=80},
-    [337]={type="aura", target=1, duration=4, damageATK1=200, damageATK=40, noFirstTick=true},
-    [338]={type="nuke", target=0, damageATK=50},
-    [339]={type="nuke", target="all-enemies", damageATK=120, firstTurn=3},
+    [333]={type="aura", target=4, duration=3, modDamageDealt=40}, --Overload
+    [334]={type="nuke", target=0, damageATK=90}, --Hefty Package
+    [335]={type="nuke", target="enemy-back", damageATK=40}, --Errant Package
+    [336]={type="heal", target=3, healATK=80}, --Evidence of Wrongdoing
+    [337]={type="aura", target=1, duration=4, damageATK1=200, damageATK=40, noFirstTick=true}, --Wavebender's Tide
+    [338]={type="nuke", target=0, damageATK=50}, --Scallywag Slash
+    [339]={type="nuke", target="all-enemies", damageATK=120, firstTurn=3}, --Cannon Barrage
     [341]={type="aura", target=1, damageATK1=120, duration=3, plusDamageTakenATK=20}, --Tainted Bite
     [342]={
 		{type="nuke", target=0, damageATK=100},
@@ -66,19 +66,62 @@ T.MoreSpells = {
 		{type="aura", target=4, duration=1, modDamageDealt=20},
 	}, --Sharptooth Snarl
     [344]={type="nuke", target="all-enemies", damageATK=30}, --Razorwing Buffet
-    [345]={type="aura", target="all-allies" , duration=3 , modDamageTaken=-30},
-    [346]={type="aura", target=0, duration=2, damageATK1=30, modDamageDealt=-1},
+    [345]={type="aura", target="all-allies" , duration=3 , modDamageTaken=-30}, --Protective Wings (Bugged in data maybe? Description wording applies modDamageDealt.)
+    [346]={type="aura", target=0, duration=2, damageATK1=30, modDamageDealt=-1}, --Heel Bite (BUGGED: Should be modDamageDealt=-1. It isn't.)
     [347]={type="nuke", target="cone", damageATK=100}, --Darkness from Above
     [348]={
 		{type="nuke", target=1, damageATK=120},
 		{type="aura", target=1, duration=3, plusDamageTakenATK=20},
 	}, --Tainted Bite
-    [349]={type="nuke", target="all-enemies", damageATK=8},
+    [349]={type="nuke", target="all-enemies", damageATK=8}, --Anima Swell
+}
+
+T.UnverifiedSpells = {
+    [306]={type="aura", target=3, duration=3, modMaxHP=60, plusDamageDealtATK=40}, --Arcane Empowerment (UNVERIFIED)
+    [307]={type="nuke", target="cone", damageATK=160}, --Fist of Nature (UNVERIFIED)
+    [308]={type="nuke", target=1, damageATK=350, firstTurn=3}, --Spore of Doom (UNVERIFIED)
+    [309]={
+        {type="heal", target="all-allies", healATK=200},
+        {type="aura", target="all-allies", duration=1, modDamageDealt=30},
+    }, --Threads of Fate (UNVERIFIED)
+    [310]={
+        {type="nuke", target=0, damageATK=140},
+        {type="aura", target=4, duration=1, modDamageDealt=20},
+    }, --Axe of Determination (UNVERIFIED)
+    [311]={
+        {type="heal", target=3, healATK=120},
+        {type="aura", target=3, duration=2, modMaxHP=40},
+    }, --Wings of Mending (UNVERIFIED)
+    [312]={type="nuke", target="cone", damageATK=180}, --Panoptic Beam (UNVERIFIED)
+    [313]={type="heal", target="all-allies", healATK=70}, --Spirit's Guidance (UNVERIFIED)
+    [314]={
+        {type="heal", target=3, healATK=130},
+        {type="aura", target=3, duration=2, plusDamageDealtATK=50},
+    }, --Purifying Light (UNVERIFIED)
+    [316]={type="nuke", target=0, damageATK=100, selfHealATK=30}, --Self Replication (UNVERIFIED)
+    [317]={type="aura", target="enemy-front", duration=1, damageATK1=150, plusDamageTakenATK=30}, --Shocking Fist (UNVERIFIED)
+    [318]={type="aura", target="all-allies", duration=3, plusDamageDealtATK=50}, --Inspiring Howl (UNVERIFIED)
+    [319]={type="aura", target="enemy-front", duration=3, damageATK1=80, damageATK=50, noFirstTick=true}, --Shattering Blows (UNVERIFIED)
+    [320]={type="nuke", target="enemy-back", damageATK=100}, --Hailstorm (UNVERIFIED)
+    [321]={type="heal", target=3, healATK=200}, --Adjustment (UNVERIFIED)
+    [322]={
+        {type="nuke", target=0, damageATK=80, selfHealATK=80},
+        {type="aura", target=4, duration=1, modMaxHP=80},
+    }, --Balance In All Things (UNVERIFIED)
+    [323]={
+        {type="nuke", target="enemy-back", damageATK=40},
+        {type="aura", target="enemy-back", duration=2, modDamageDealt=-10},
+    }, --Anima Shatter (UNVERIFIED)
+    [324]={type="heal", target="friend-surround", healATK=120}, --Protective Parasol (UNVERIFIED)
+    [340]={type="nuke", target=1, damageATK=60}, --Tainted Bite (UNVERIFIED)
 }
 
 if VenturePlan ~= nil then 
     for k,v in pairs(T.MoreSpells) do
         VenturePlan.KnownSpells[k] = v
+    end
+    for k,v in pairs(T.MoreSpells) do
+        VenturePlan.UnverifiedSpells[k] = v
     end
 else 
     message("You are running an undoctored version of VenturePlan. Instructions on how to make this addon work are at https://github.com/hythloday/VenturePlanSoDMissions")
