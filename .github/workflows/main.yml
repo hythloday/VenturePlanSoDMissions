@@ -71,5 +71,6 @@ jobs:
         data: '{ "metadata": "{ \"changelog\": \"${{github.event.inputs.version}}\", \"displayName\": \"${{ steps.init.outputs.tag_name }}.zip\", \"gameVersions\": [8290], \"releaseType\": \"release\" }"}'
         files: '{ "file": ".releases/${{ steps.init.outputs.tag_name }}.zip" }'
         customHeaders: '{ "X-Api-Token": "${{ secrets.CURSEFORGE_API_TOKEN }}" }'
+
     - name: Show Response
       run: echo ${{ steps.curseforgeUpload.outputs.response }}
