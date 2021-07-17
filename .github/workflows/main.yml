@@ -11,6 +11,7 @@ env:
   CLASSIC_VERSION: 11307
   BURNING_CRUSADE_VERSION: 20501
   CURSEFORGE_PROJECT_ID: 504674
+  WOWINTERFACE_PROJECT_ID: 26117
 
 jobs:
   package:
@@ -40,6 +41,13 @@ jobs:
         zip -9 -r ${{steps.init.outputs.tag_name}}.zip ${{steps.init.outputs.addon_name}}
         cd ..
 
+    - name: Create changelog
+      id: changelog
+      run: |
+        changelog_name=changelog-${{github.event.inputs.version}}.txt
+        git log $(git describe --tags --abbrev=0)..HEAD --oneline --pretty=%s > .releases/$changelog_name
+        echo "::set-output name=changelog_name::${changelog_name}"
+
     - name: Tag this version
       id: create_release
       uses: actions/create-release@v1
@@ -62,23 +70,19 @@ jobs:
         asset_name: ${{steps.init.outputs.tag_name}}.zip
         asset_content_type: application/zip
 
-    # - name: Upload zip to CurseForge
-    #   id: curseforgeUpload
-    #   uses: fjogeleit/http-request-action@master
-    #   with:
-    #     url: 'https://wow.curseforge.com/api/projects/${{ env.CURSEFORGE_PROJECT_ID }}/upload-file'
-    #     method: 'POST'
-    #     data: '{ "metadata": "{ \"changelog\": \"${{github.event.inputs.version}}\", \"displayName\": \"${{ steps.init.outputs.tag_name }}.zip\", \"gameVersions\": [8290], \"releaseType\": \"release\" }"}'
-    #     files: '{ "file": ".releases/${{ steps.init.outputs.tag_name }}.zip" }'
-    #     customHeaders: '{ "X-Api-Token": "${{ secrets.CURSEFORGE_API_TOKEN }}" }'
-
-    # - name: Show Response
-    #   run: echo ${{ steps.curseforgeUpload.outputs.response }}
-    #   if: success() || failure()
-
     - name: Upload zip to CurseForge
       run: |
         curl -s https://wow.curseforge.com/api/projects/${{ env.CURSEFORGE_PROJECT_ID }}/upload-file \
           -H 'X-Api-Token: ${{ secrets.CURSEFORGE_API_TOKEN }}' \
           -F file=@.releases/${{ steps.init.outputs.tag_name }}.zip \
           -F metadata='{ "changelog": "${{github.event.inputs.version}}", "displayName": "${{ steps.init.outputs.tag_name }}.zip", "gameVersions": [8290], "releaseType": "release"}'
+
+    - name: Upload zip to WowInterface
+      if: success() || failure()
+      run: |
+        curl -s https://api.wowinterface.com/addons/update \
+          -H "x-api-token: ${{ secrets.WOWINTERFACE_API_TOKEN }}" \
+          -F id=${{ env.WOWINTERFACE_PROJECT_ID }} \
+          -F version=${{github.event.inputs.version}} \
+          -F updatefile=@.releases/${{ steps.init.outputs.tag_name }}.zip \
+          -F changelog=@.releases/${{ steps.changelog.outputs.changelog_name }}
