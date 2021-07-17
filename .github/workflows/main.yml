@@ -10,6 +10,7 @@ on:
 env:
   CLASSIC_VERSION: 11307
   BURNING_CRUSADE_VERSION: 20501
+  CURSEFORGE_PROJECT_ID: 504674
 
 jobs:
   package:
@@ -60,3 +61,24 @@ jobs:
         asset_path: .releases/${{steps.init.outputs.tag_name}}.zip
         asset_name: ${{steps.init.outputs.tag_name}}.zip
         asset_content_type: application/zip
+
+    # - name: Upload zip to CurseForge
+    #   id: curseforgeUpload
+    #   uses: fjogeleit/http-request-action@master
+    #   with:
+    #     url: 'https://wow.curseforge.com/api/projects/${{ env.CURSEFORGE_PROJECT_ID }}/upload-file'
+    #     method: 'POST'
+    #     data: '{ "metadata": "{ \"changelog\": \"${{github.event.inputs.version}}\", \"displayName\": \"${{ steps.init.outputs.tag_name }}.zip\", \"gameVersions\": [8290], \"releaseType\": \"release\" }"}'
+    #     files: '{ "file": ".releases/${{ steps.init.outputs.tag_name }}.zip" }'
+    #     customHeaders: '{ "X-Api-Token": "${{ secrets.CURSEFORGE_API_TOKEN }}" }'
+
+    # - name: Show Response
+    #   run: echo ${{ steps.curseforgeUpload.outputs.response }}
+    #   if: success() || failure()
+
+    - name: Upload zip to CurseForge
+      run: |
+        curl -s https://wow.curseforge.com/api/projects/${{ env.CURSEFORGE_PROJECT_ID }}/upload-file \
+          -H 'X-Api-Token: ${{ secrets.CURSEFORGE_API_TOKEN }}' \
+          -F file=@.releases/${{ steps.init.outputs.tag_name }}.zip \
+          -F metadata='{ "changelog": "${{github.event.inputs.version}}", "displayName": "${{ steps.init.outputs.tag_name }}.zip", "gameVersions": [8290], "releaseType": "release"}'
