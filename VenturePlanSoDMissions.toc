@@ -1,6 +1,6 @@
 ## Interface: 90010
 ## Title: Extra Missions for Venture Plan
-## Version: 4.16a
+## Version: 4.16a-0.04
 ## Notes: Adds 9.1 table missions to Venture Plan.
 ## Author: hythloday
 ## License: GPLv3
