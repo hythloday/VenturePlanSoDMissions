@@ -120,8 +120,8 @@ if VenturePlan ~= nil then
     for k,v in pairs(T.MoreSpells) do
         VenturePlan.KnownSpells[k] = v
     end
-    for k,v in pairs(T.MoreSpells) do
-        VenturePlan.UnverifiedSpells[k] = v
+    for k,v in pairs(T.UnverifiedSpells) do
+        VenturePlan.KnownSpells[k] = v
     end
 else 
     message("You are running an undoctored version of VenturePlan. Instructions on how to make this addon work are at https://github.com/hythloday/VenturePlanSoDMissions")
