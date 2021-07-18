@@ -3,6 +3,7 @@
 ## Version: 4.16a-0.04
 ## Notes: Adds 9.1 table missions to Venture Plan.
 ## Author: hythloday
+## Dependencies: VenturePlan
 ## License: GPLv3
 ## X-Website: https://github.com/hythloday/extra-missions-venture-plan
 
