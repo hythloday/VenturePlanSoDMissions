@@ -46,8 +46,8 @@ T.MoreSpells = {
     [327]={type="aura", target="all-other-allies", duration=3, plusDamageDealtATK=20}, --Inspirational Teachings
     [328]={type="nuke", target=0, damageATK=30}, --Applied Lesson
     [329]={type="aura", target=4, modDamageTaken=-50, duration=3}, --Muscle Up
-    [330]={type="aura", target=4, duration=2, plusDamageDealtATK=25}, --Oversight
-    [331]={type="aura", target="all-allies", plusDamageDealtATK=23, duration=3}, --Supporting Fire (I'm not sure it needs duration 3)
+    [330]={type="aura", target="all-allies", duration=2, plusDamageDealtATK=20}, --Oversight
+    [331]={type="aura", target="all-other-allies", duration=3, plusDamageDealtATK=20}, --Supporting Fire
     [332]={type="nuke", target=1, damageATK=150}, --Emptied Mug
     [333]={type="aura", target=4, duration=3, modDamageDealt=40}, --Overload
     [334]={type="nuke", target=0, damageATK=90}, --Hefty Package
@@ -66,8 +66,8 @@ T.MoreSpells = {
 		{type="aura", target=4, duration=1, modDamageDealt=20},
 	}, --Sharptooth Snarl
     [344]={type="nuke", target="all-enemies", damageATK=30}, --Razorwing Buffet
-    [345]={type="aura", target="all-allies" , duration=3 , modDamageTaken=-30}, --Protective Wings (Bugged in data maybe? Description wording applies modDamageDealt.)
-    [346]={type="aura", target=0, duration=2, damageATK1=30, modDamageDealt=-1}, --Heel Bite (BUGGED: Should be modDamageDealt=-1. It isn't.)
+    [345]={type="aura", target="all-allies" , duration=3 , plusDamageTakenATK=-30}, --Protective Wings
+    [346]={type="aura", target=0, duration=2, damageATK1=30, plusDamageDealtATK=1}, --Heel Bite (BUGGED: Should be modDamageDealt=-1. It isn't.)
     [347]={type="nuke", target="cone", damageATK=100}, --Darkness from Above
     [348]={
 		{type="nuke", target=1, damageATK=120},
