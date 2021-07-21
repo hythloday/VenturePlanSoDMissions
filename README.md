@@ -25,5 +25,8 @@ Many thanks to:
 * Neurotoxin001
 * pyuuwz
 * czullo
+* bkifft
+* flow0284
+* zealvurte
 
 for contributions and support, as well as to the original author for a great addon.
