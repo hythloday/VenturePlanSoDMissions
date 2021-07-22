@@ -70,12 +70,12 @@ jobs:
         asset_name: ${{steps.init.outputs.tag_name}}.zip
         asset_content_type: application/zip
 
-    - name: Upload zip to CurseForge
-      run: |
-        curl -s https://wow.curseforge.com/api/projects/${{ env.CURSEFORGE_PROJECT_ID }}/upload-file \
-          -H 'X-Api-Token: ${{ secrets.CURSEFORGE_API_TOKEN }}' \
-          -F file=@.releases/${{ steps.init.outputs.tag_name }}.zip \
-          -F metadata='{ "changelog": "${{github.event.inputs.version}}", "displayName": "${{ steps.init.outputs.tag_name }}.zip", "gameVersions": [8290], "releaseType": "release"}'
+    # - name: Upload zip to CurseForge
+    #   run: |
+    #     curl -s https://wow.curseforge.com/api/projects/${{ env.CURSEFORGE_PROJECT_ID }}/upload-file \
+    #       -H 'X-Api-Token: ${{ secrets.CURSEFORGE_API_TOKEN }}' \
+    #       -F file=@.releases/${{ steps.init.outputs.tag_name }}.zip \
+    #       -F metadata='{ "changelog": "${{github.event.inputs.version}}", "displayName": "${{ steps.init.outputs.tag_name }}.zip", "gameVersions": [8290], "releaseType": "release"}'
 
     - name: Upload zip to WowInterface
       if: success() || failure()
