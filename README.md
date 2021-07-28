@@ -30,5 +30,6 @@ Many thanks to:
 * bkifft
 * flow0284
 * zealvurte
+* Jegethy
 
 for contributions and support, as well as to the original author for a great addon.
