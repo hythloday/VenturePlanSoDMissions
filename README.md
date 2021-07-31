@@ -20,6 +20,12 @@ This makes the internal data of the addon (`T`) available to other addons (by pu
 
 If you have updates to the spell list you'd like to include (see `extra-vs-spells.lua`), please open a PR and I'll add them.
 
+A helpful step in doing so is, if you find a missions that's mispredicted, run:
+
+`/dump C_Garrison.GetMissionDeploymentInfo(CovenantMissionFrame:GetMissionPage().missionInfo.missionID)`
+
+while you're looking at the mission.
+
 ## Contributors and thanks
 
 Many thanks to:
@@ -31,5 +37,6 @@ Many thanks to:
 * flow0284
 * zealvurte
 * Jegethy
+* siweia
 
 for contributions and support, as well as to the original author for a great addon.
