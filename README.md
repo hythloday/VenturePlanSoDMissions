@@ -2,6 +2,14 @@
 
 * [WowInterface](https://www.wowinterface.com/downloads/info26117-VenturePlanSoDMissions.html)
 
+# #ActiBlizzWalkout
+
+Full support and solidarity for the workers at Blizzard.
+
+![I stand in solidarity with the workers of Activision Blizzard King and their demands](https://pbs.twimg.com/media/E7zWaEEVIBQfhas?format=jpg&name=900x900)
+
+If you email me proof of a donation to any of their nominated charities (Black Girls CODE, Futures without Violence, Girls Who Code, RAINN, Women in Animation, Women in Games International) I'll match it.
+
 # Legal stuff
 
 VenturePlan does not expose any of its data to other addons, so to have this addon work, you will need to change it to do so. Note that VenturePlan does not have a a licence that permits you to alter its source code, and while it is legal to tinker with source code you're allowed to run in my jurisdiction, it may not be legal in yours. Consult a lawyer if you are worried. Obviously I don't encourage you to do so if it's not legal for you. In any case you should absolutely not redistribute the changes you've made.
