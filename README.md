@@ -46,5 +46,7 @@ Many thanks to:
 * zealvurte
 * Jegethy
 * siweia
+* LostTemple1990
+* epiktetov
 
 for contributions and support, as well as to the original author for a great addon.

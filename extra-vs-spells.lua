@@ -98,15 +98,15 @@ T.UnverifiedSpells = {
         {type="heal", target=3, healATK=130},
         {type="aura", target=3, duration=2, plusDamageDealtATK=50},
     }, --Purifying Light (UNVERIFIED)
-    [316]={type="nuke", target=0, damageATK=100, selfHealATK=30}, --Self Replication (UNVERIFIED)
+    [316]={type="nuke", target=0, damageATK=100, selfhealATK=30}, --Self Replication (UNVERIFIED)
     [317]={type="aura", target="enemy-front", duration=1, damageATK1=150, plusDamageTakenATK=30}, --Shocking Fist (UNVERIFIED)
     [318]={type="aura", target="all-allies", duration=3, plusDamageDealtATK=50}, --Inspiring Howl (UNVERIFIED)
     [319]={type="aura", target="enemy-front", duration=3, damageATK1=80, damageATK=50, noFirstTick=true}, --Shattering Blows (UNVERIFIED)
     [320]={type="nuke", target="enemy-back", damageATK=100}, --Hailstorm (UNVERIFIED)
     [321]={type="heal", target=3, healATK=200}, --Adjustment (UNVERIFIED)
     [322]={
-        {type="nuke", target=0, damageATK=80, selfHealATK=80},
-        {type="aura", target=4, duration=1, modMaxHP=80},
+        {type="nuke", target=0, damageATK=80, selfhealATK=80},
+        {type="aura", target=4, duration=1, modMaxHPATK=80},
     }, --Balance In All Things (UNVERIFIED)
     [323]={
         {type="nuke", target="enemy-back", damageATK=40},
