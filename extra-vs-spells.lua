@@ -40,6 +40,10 @@ end
 
 T.MoreSpells = {
     [305]={type="nuke", target="enemy-back", damageATK=120}, --Roots of Submission
+    [311]={
+        {type="heal", target=3, healATK=120},
+        {type="aura", target=3, duration=2, modMaxHPATK=40},
+    }, --Wings of Mending
     [315]={type="aura", target=1, damageATK1=150, duration=2, modDamageDealt=-30}, --Resounding Message
     [325]={type="aura", target="friend-surround", duration=2, modDamageDealt=60}, --Vision of Beauty
     [326]={type="nuke", target="cleave", damageATK=25}, --Shiftless Smash
@@ -88,10 +92,6 @@ T.UnverifiedSpells = {
         {type="nuke", target=0, damageATK=140},
         {type="aura", target=4, duration=1, modDamageDealt=20},
     }, --Axe of Determination (UNVERIFIED)
-    [311]={
-        {type="heal", target=3, healATK=120},
-        {type="aura", target=3, duration=2, modMaxHP=40},
-    }, --Wings of Mending (UNVERIFIED)
     [312]={type="nuke", target="cone", damageATK=180}, --Panoptic Beam (UNVERIFIED)
     [313]={type="heal", target="all-allies", healATK=70}, --Spirit's Guidance (UNVERIFIED)
     [314]={
