@@ -18,11 +18,15 @@ In the US, see e.g. [Galoob v. Nintendo](https://www.lexisnexis.com/community/ca
 
 # Getting it running
 
-To expose VenturePlan's internal data you will need to edit its source code. Open up Interface/Addons/VenturePlan/vs.lua in a text editor, and insert the line `_G[_] = T` in the first blank space. It should look like this when you're done:
+To expose VenturePlan's internal data you will need to edit its source code. First, ensure that you are on the latest version, `4.16a`. Then open up `Interface/Addons/VenturePlan/vs.lua` in a text editor, and insert the line `_G[_] = T` in the first blank space. It should look like this when you're done:
 
 ![Notepad preview of changed file](img/notepad.png)
 
 This makes the internal data of the addon (`T`) available to other addons (by putting it in the global table, `_G`, which every addon has available to it). In general you shouldn't be messing with addons like this, because it's a great way of getting hacked, but in this case there's no way around it. _caveat emptor_
+
+# Hotfixing the Code for Renown Level 62 and Above
+
+At renown level 62, you will gain your 21st companion. VenturePlan is coded to handle a maximum to 20 companions. You will start seeing errors about `self.info` being `nil`. To fix this, change line 1960 (in version `4.16a`) from `for i=1,20 do` to `for i=1,99 do`. This will add support up to 99 companions.
 
 # Contributing
 
