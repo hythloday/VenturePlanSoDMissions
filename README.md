@@ -26,7 +26,7 @@ This makes the internal data of the addon (`T`) available to other addons (by pu
 
 # Hotfixing the Code for Renown Level 62 and Above
 
-At renown level 62, you will gain your 21st companion. VenturePlan is coded to handle a maximum to 20 companions. You will start seeing errors about `self.info` being `nil`. To fix this, change line 1960 (in version `4.16a`) from `for i=1,20 do` to `for i=1,99 do`. This will add support up to 99 companions.
+At renown level 62, you will gain your 21st companion. VenturePlan is coded to handle a maximum to 20 companions. You will start seeing errors about `self.info` being `nil`. To fix this, edit the file `_retail_/Interface/AddOns/VenturePlan/Widgets.lua`: change line 1960 (in version `4.16a`) from `for i=1,20 do` to `for i=1,99 do`. This will add support up to 99 companions.
 
 # Contributing
 
