@@ -28,6 +28,17 @@ This makes the internal data of the addon (`T`) available to other addons (by pu
 
 At renown level 62, you will gain your 21st companion. VenturePlan is coded to handle a maximum to 20 companions. You will start seeing errors about `self.info` being `nil`. To fix this, edit the file `_retail_/Interface/AddOns/VenturePlan/Widgets.lua`: change line 1960 (in version `4.16a`) from `for i=1,20 do` to `for i=1,99 do`. This will add support up to 99 companions.
 
+After completing this change, the code should look like this:
+
+```lua
+s.companions = {}
+for i=1,99 do
+    t = CreateObject("FollowerListButton", f, false)
+    t:SetPoint("TOPLEFT", ((i-1)%4)*76+14, -math.floor((i-1)/4)*72-130)
+    s.companions[i] = t
+end
+```
+
 # Contributing
 
 If you have updates to the spell list you'd like to include (see `extra-vs-spells.lua`), please open a PR and I'll add them.
