@@ -63,6 +63,8 @@ Many thanks to:
 * siweia
 * LostTemple1990
 * epiktetov
+* woefulwabbit
+* boomboo
 * FlipperPA
 * cremor
 
