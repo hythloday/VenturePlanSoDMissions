@@ -63,5 +63,7 @@ Many thanks to:
 * siweia
 * LostTemple1990
 * epiktetov
+* FlipperPA
+* cremor
 
 for contributions and support, as well as to the original author for a great addon.
