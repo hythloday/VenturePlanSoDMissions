@@ -40,6 +40,7 @@ end
 
 T.MoreSpells = {
     [305]={type="nuke", target="enemy-back", damageATK=120}, --Roots of Submission
+    [306]={type="aura", target=3, duration=3, modMaxHPATK=60, plusDamageDealtATK=40}, --Arcane Empowerment
     [311]={
         {type="heal", target=3, healATK=120},
         {type="aura", target=3, duration=2, modMaxHPATK=40},
@@ -81,7 +82,6 @@ T.MoreSpells = {
 }
 
 T.UnverifiedSpells = {
-    [306]={type="aura", target=3, duration=3, modMaxHP=60, plusDamageDealtATK=40}, --Arcane Empowerment (UNVERIFIED)
     [307]={type="nuke", target="cone", damageATK=160}, --Fist of Nature (UNVERIFIED)
     [308]={type="nuke", target=1, damageATK=350, firstTurn=3}, --Spore of Doom (UNVERIFIED)
     [309]={
