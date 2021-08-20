@@ -18,7 +18,7 @@ In the US, see e.g. [Galoob v. Nintendo](https://www.lexisnexis.com/community/ca
 
 # Getting it running
 
-To expose VenturePlan's internal data you will need to edit its source code. First, ensure that you are on the latest version, `4.16a`. Then open up `Interface/Addons/VenturePlan/vs.lua` in a text editor, and insert the line `_G[_] = T` in the first blank space. It should look like this when you're done:
+To expose VenturePlan's internal data you will need to edit its source code. First, ensure that you are on the latest version, `4.16a`. Then open up `_retail_/Interface/AddOns/VenturePlan/vs.lua` in a text editor, and insert the line `_G[_] = T` in the first blank space. It should look like this when you're done:
 
 ![Notepad preview of changed file](img/notepad.png)
 
