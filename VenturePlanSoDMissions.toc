@@ -5,6 +5,6 @@
 ## Author: hythloday
 ## Dependencies: VenturePlan
 ## License: GPLv3
-## X-Website: https://github.com/hythloday/extra-missions-venture-plan
+## X-Website: https://github.com/hythloday/VenturePlanSoDMissions
 
 extra-vs-spells.lua
