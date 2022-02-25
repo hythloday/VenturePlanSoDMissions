@@ -1,6 +1,6 @@
-## Interface: 90100
+## Interface: 90200
 ## Title: Extra Missions for Venture Plan
-## Version: 0.07
+## Version: 0.10
 ## Notes: Adds 9.1 table missions to Venture Plan.
 ## Author: hythloday
 ## Dependencies: VenturePlan
