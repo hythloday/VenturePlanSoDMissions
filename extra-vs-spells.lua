@@ -63,20 +63,20 @@ T.MoreSpells = {
     [339]={type="nuke", target="all-enemies", damageATK=120, firstTurn=3}, --Cannon Barrage
     [341]={type="aura", target=1, damageATK1=120, duration=3, plusDamageTakenATK=20}, --Tainted Bite
     [342]={
-	{type="nuke", target=0, damageATK=100},
-	{type="aura", target=0, duration=2, plusDamageDealtATK=-70},
+        {type="nuke", target=0, damageATK=100},
+        {type="aura", target=0, duration=2, plusDamageDealtATK=-70},
     }, --Regurgitated Meal
     [343]={
-	{type="nuke", target="enemy-front", damageATK=80},
-	{type="aura", target=4, duration=1, modDamageDealt=20},
+        {type="nuke", target="enemy-front", damageATK=80},
+        {type="aura", target=4, duration=1, modDamageDealt=20},
     }, --Sharptooth Snarl
     [344]={type="nuke", target="all-enemies", damageATK=30}, --Razorwing Buffet
     [345]={type="aura", target="all-allies" , duration=3 , plusDamageTakenATK=-30}, --Protective Wings
     [346]={type="aura", target=0, duration=2, damageATK1=30, plusDamageDealtATK=1}, --Heel Bite (BUGGED: Should be modDamageDealt=-1. It isn't.)
     [347]={type="nuke", target="cone", damageATK=100}, --Darkness from Above
     [348]={
-	{type="nuke", target=1, damageATK=120},
-	{type="aura", target=1, duration=3, plusDamageTakenATK=20},
+        {type="nuke", target=1, damageATK=120},
+        {type="aura", target=1, duration=3, plusDamageTakenATK=20},
     }, --Tainted Bite
     [349]={type="nuke", target="all-enemies", damageATK=8}, --Anima Swell
 
@@ -100,17 +100,20 @@ T.MoreSpells = {
     [366]={type="nuke", damageATK=50, target="enemy-front"},
     [367]={type="nuke", damageATK=75, target="cone"},
     [368]={type="nuke", damageATK=60, target=1},
-    [369]={type="nuke", damagePerc=100, target="all-enemies", nore=true, echo=2},
+    [369]={
+        {type="nop"},
+        {type="aura", damageATK=50, target="all-enemies", duration=0, noFirstTick=true, echo=2},
+    },
     [370]={type="aura", modDamageDealt=-50, target="all-enemies", duration=2},
     [371]={type="aura", modDamageTaken=-25, target="all-other-allies", duration=2},
-    [372]={type="nuke", damageATK=80, target="enemy-front"},
+    [372]={type="nuke", damageATK=40, target="enemy-front"},
     [373]={
-        [1]={type="nuke", damageATK=100, target=1},
-        [2]={type="heal", healATK=100, target=4},
+        {type="nuke", damageATK=100, target=1},
+        {type="heal", healATK=100, target=4},
     },
     [374]={
-        [1]={type="nuke", damageATK=100, target=1},
-        [2]={type="heal", healATK=40, target=4},
+        {type="nuke", damageATK=100, target=1},
+        {type="heal", healATK=40, target=4},
     },
     [375]={type="aura", modDamageDealt=-20, target="all-enemies", duration=2},
 }
