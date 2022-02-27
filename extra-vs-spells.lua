@@ -63,22 +63,59 @@ T.MoreSpells = {
     [339]={type="nuke", target="all-enemies", damageATK=120, firstTurn=3}, --Cannon Barrage
     [341]={type="aura", target=1, damageATK1=120, duration=3, plusDamageTakenATK=20}, --Tainted Bite
     [342]={
-		{type="nuke", target=0, damageATK=100},
-		{type="aura", target=0, duration=2, plusDamageDealtATK=-70},
-	}, --Regurgitated Meal
+        {type="nuke", target=0, damageATK=100},
+        {type="aura", target=0, duration=2, plusDamageDealtATK=-70},
+    }, --Regurgitated Meal
     [343]={
-		{type="nuke", target="enemy-front", damageATK=80},
-		{type="aura", target=4, duration=1, modDamageDealt=20},
-	}, --Sharptooth Snarl
+        {type="nuke", target="enemy-front", damageATK=80},
+        {type="aura", target=4, duration=1, modDamageDealt=20},
+    }, --Sharptooth Snarl
     [344]={type="nuke", target="all-enemies", damageATK=30}, --Razorwing Buffet
     [345]={type="aura", target="all-allies" , duration=3 , plusDamageTakenATK=-30}, --Protective Wings
     [346]={type="aura", target=0, duration=2, damageATK1=30, plusDamageDealtATK=1}, --Heel Bite (BUGGED: Should be modDamageDealt=-1. It isn't.)
     [347]={type="nuke", target="cone", damageATK=100}, --Darkness from Above
     [348]={
-		{type="nuke", target=1, damageATK=120},
-		{type="aura", target=1, duration=3, plusDamageTakenATK=20},
-	}, --Tainted Bite
+        {type="nuke", target=1, damageATK=120},
+        {type="aura", target=1, duration=3, plusDamageTakenATK=20},
+    }, --Tainted Bite
     [349]={type="nuke", target="all-enemies", damageATK=8}, --Anima Swell
+
+    --9.2.0
+    [350]={type="nuke", damageATK=25, target="cleave"},
+    [351]={type="nuke", damageATK=75, target=1, firstTurn=4},
+    [352]={type="nop"},
+    [353]={type="nop"},
+    [354]={type="nuke", damageATK=400, target="enemy-front", firstTurn=5},
+    [355]={type="passive", modDamageDealt=-25, target=1},
+    [356]={type="nuke", damageATK=100, target=1},
+    [357]={type="passive", modDamageDealt=-50, target=0},
+    [358]={type="nuke", damageATK=400, target="enemy-front", firstTurn=5},
+    [359]={type="aura", damageATK=50, target=1, duration=0, noFirstTick=true, echo=3},
+    [360]={type="nuke", damageATK=50, target="enemy-front"},
+    [361]={type="nuke", damageATK=75, target="enemy-front"},
+    [362]={type="nuke", damageATK=120, target=1},
+    [363]={type="aura", modDamageDealt=10, target="friend-front-hard", duration=2},
+    [364]={type="taunt", target="all-enemies", duration=2},
+    [365]={type="aura", modDamageTaken=50, target=0, duration=1},
+    [366]={type="nuke", damageATK=50, target="enemy-front"},
+    [367]={type="nuke", damageATK=75, target="cone"},
+    [368]={type="nuke", damageATK=60, target=1},
+    [369]={
+        {type="nop"},
+        {type="aura", damageATK=50, target="all-enemies", duration=0, noFirstTick=true, echo=2},
+    },
+    [370]={type="aura", modDamageDealt=-50, target="all-enemies", duration=2},
+    [371]={type="aura", modDamageTaken=-25, target="all-other-allies", duration=2},
+    [372]={type="nuke", damageATK=40, target="enemy-front"},
+    [373]={
+        {type="nuke", damageATK=100, target=1},
+        {type="heal", healATK=100, target=4},
+    },
+    [374]={
+        {type="nuke", damageATK=100, target=1},
+        {type="heal", healATK=40, target=4},
+    },
+    [375]={type="aura", modDamageDealt=-20, target="all-enemies", duration=2},
 }
 
 T.UnverifiedSpells = {
